@@ -18,6 +18,7 @@ return new class extends Migration
         $table->decimal('price');
         $table->date('expiration_date');
         $table->binary('image')->nullable(); // Coluna para armazenar a imagem diretamente no banco de dados
+        $table->foreignId('category_id')->constrained()->onDelete('cascade'); // Adicione esta linha dentro do método up() da migração products
         $table->timestamps();
     });
     
