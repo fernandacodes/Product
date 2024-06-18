@@ -53,5 +53,22 @@ class ProductController extends Controller
 
     }
 
+    public function search(Request $request)
+    {
+        $query = Product::query();
+
+        if ($request->has('name')) {
+            $query->where('name', 'like', '%' . $request->input('name') . '%');
+        }
+
+        if ($request->has('description')) {
+            $query->where('description', 'like', '%' . $request->input('description') . '%');
+        }
+
+        $products = $query->get();
+
+        return response()->json($products, 200);
+    }
+
 }
 
