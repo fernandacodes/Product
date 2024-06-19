@@ -44,6 +44,14 @@ class ProductController extends Controller
 
     }
 
+    public function show($id)
+    {
+        $product = Product::findOrFail($id);
+
+        return $product;
+
+    }
+
     public function delete(Request $request, $id)
     {
         $product = Product::findOrFail($id);
