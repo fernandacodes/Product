@@ -34,7 +34,7 @@ Substitua `caminho/para/seu/projeto` pelo caminho real onde o projeto está arma
 
 Dentro da pasta `src/products/`, execute o seguinte comando para iniciar os serviços necessários:
 
-bash sudo docker compose up
+sudo docker compose up
 
 
 Este comando irá construir e iniciar os contêineres definidos no arquivo `docker-compose.yml` presente na pasta.
