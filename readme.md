@@ -61,7 +61,7 @@ Este comando irá construir e iniciar os contêineres definidos no arquivo `dock
 Se você fizer alterações nos arquivos de configuração ou no código após a inicialização, precisará reconstruir os contêineres. Para isso, use os comandos:
 
 ```bash
-sudo docker compose
-down sudo docker compose up
+sudo docker compose down
+sudo docker compose up
 ```
 
