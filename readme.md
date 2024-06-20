@@ -1,5 +1,7 @@
 # Execução do Projeto Backend PHP e Laravel com Docker
 
+##OBS: Clonar o repositorio da branch Develop
+
 ## Introdução
 
 Este guia serve como referência para configurar e executar o projeto backend utilizando Docker. Ele abrange desde a preparação do ambiente até a execução dos serviços necessários para o funcionamento do projeto.
