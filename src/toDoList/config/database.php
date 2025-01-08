@@ -5,9 +5,9 @@ use Illuminate\Support\Str;
 return [
 
     /*
-    |--------------------------------------------------------------------------
+    |---------------------------------------------------------------------------
     | Default Database Connection Name
-    |--------------------------------------------------------------------------
+    |---------------------------------------------------------------------------
     |
     | Here you may specify which of the database connections below you wish
     | to use as your default connection for database operations. This is
@@ -16,12 +16,12 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*
-    |--------------------------------------------------------------------------
+    |---------------------------------------------------------------------------
     | Database Connections
-    |--------------------------------------------------------------------------
+    |---------------------------------------------------------------------------
     |
     | Below are all of the database connections defined for your application.
     | An example configuration is provided for each database system which
@@ -31,32 +31,25 @@ return [
 
     'connections' => [
 
-        'mysql' => [
-            'driver' => 'mysql',
-            'host' => env('DB_HOST'),
-            'port' => env('DB_PORT'),
+        'pgsql' => [
+            'driver' => 'pgsql',
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', '5432'),
             'database' => env('DB_DATABASE'),
             'username' => env('DB_USERNAME'),
             'password' => env('DB_PASSWORD'),
-            'unix_socket' => env('DB_SOCKET'),
-            'charset' => env('DB_CHARSET', 'utf8mb4'),
-            'collation' => env('DB_COLLATION', 'utf8mb4_unicode_ci'),
+            'charset' => 'utf8',
             'prefix' => '',
-            'prefix_indexes' => true,
-            'strict' => true,
-            'engine' => null,
-            'options' => extension_loaded('pdo_mysql') ? array_filter([
-                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
-            ]) : [],
+            'schema' => 'public',
+            'sslmode' => 'prefer',
         ],
 
-       
     ],
 
     /*
-    |--------------------------------------------------------------------------
+    |---------------------------------------------------------------------------
     | Migration Repository Table
-    |--------------------------------------------------------------------------
+    |---------------------------------------------------------------------------
     |
     | This table keeps track of all the migrations that have already run for
     | your application. Using this information, we can determine which of
@@ -70,9 +63,9 @@ return [
     ],
 
     /*
-    |--------------------------------------------------------------------------
+    |---------------------------------------------------------------------------
     | Redis Databases
-    |--------------------------------------------------------------------------
+    |---------------------------------------------------------------------------
     |
     | Redis is an open source, fast, and advanced key-value store that also
     | provides a richer body of commands than a typical key-value system
